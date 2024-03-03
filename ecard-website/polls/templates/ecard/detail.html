@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <H2>Fill in the details to send.</H2>
+    {% load static %}
+    <img src="{% static ecard %}" align="center">
+    <form action="{% url 'thankyou' %}" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name='ecard' id='ecard' value='{{ecard}}'/>
+    <input type="submit" value="Submit">
+    </form>
+</head>
+<body>
+
+</body>
+</html>
